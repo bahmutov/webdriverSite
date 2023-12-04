@@ -3,8 +3,9 @@ describe('Lidando com Popups e Alerts', () => {
   beforeEach(() => {
     cy.visit('/Popup-Alerts/index.html')
   })
+
+  // need to ensure the alert actually happens
   it('Javascript Alert', () => {
-    // need to ensure the alert actually happens
     cy.get('#button1').click()
 
     const text = 'I am an alert box!'
