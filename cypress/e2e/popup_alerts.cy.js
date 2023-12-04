@@ -13,9 +13,9 @@ describe('Lidando com Popups e Alerts', () => {
     cy.get('@alert', { timeout: 1000 }).should('have.been.calledOnceWith', text)
   })
 
+  // refactor to use cy.contains command
+  // and confirm the dialog disappears when closed
   it('Modal Popup', () => {
-    // refactor to use cy.contains command
-    // and confirm the dialog disappears when closed
     cy.get('#button2').click()
     // Removendo espaços em branco do início e do final da string
     const txtEsperado =
