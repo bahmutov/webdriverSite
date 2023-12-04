@@ -2,6 +2,8 @@ describe('Lidando com Popups e Alerts', () => {
   beforeEach(() => {
     cy.visit('/Popup-Alerts/index.html')
   })
+
+  // need to ensure the alert actually happens
   it('Javascript Alert', () => {
     cy.get('#button1').click()
     cy.on('window:alert', (txt) => {
@@ -9,6 +11,8 @@ describe('Lidando com Popups e Alerts', () => {
     })
   })
 
+  // refactor to use cy.contains command
+  // and confirm the dialog disappears when closed
   it('Modal Popup', () => {
     cy.get('#button2').click()
     // Removendo espaços em branco do início e do final da string
