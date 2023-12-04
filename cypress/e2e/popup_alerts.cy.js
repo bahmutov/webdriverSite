@@ -24,6 +24,12 @@ describe('Lidando com Popups e Alerts', () => {
     cy.get('.modal-content').find('.modal-footer').contains('Close').click()
   })
 
+  // use a better selector for to click the ajax loader
+  // confirm the loader is visible before checking that it does not exist
+  // use precise network matcher for google analytics, otherwise everything matches
+  // use cy.contains command
+  // use precise selector for the close button
+  // confirm the modal does not exist after closing it
   it('Outra maneira para o Modal Popup', () => {
     cy.intercept('/**').as('googleAnalytics')
     cy.get('p > a').click()
